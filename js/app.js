@@ -4,70 +4,50 @@ const gameQuestions = [
         id:1,
         question:"What two countries were already involved in a military conflict before the beginning of World War II?",
         a:"Japan and China",
-        b:"that is incorrect",
-        c:"that is incorrect",
-        d:"that is incorrect",
-        answer:"a"
+        b:"Korea and China",
+        c:"Japan and Korea",
+        d:"Russia and China",
+        answer:"Japan and China"
     },
     {
         id:2,
         question:"What was the code name for the Battle of Normandy?",
-        a:"better luck next time",
-        b:"better luck next time",
-        c:"better luck next time",
+        a:"Operation Spring Awakening",
+        b:"Operation Fortitude",
+        c:"Operation Barbarossa",
         d:"Operation Overlord",
-        answer:"d"
+        answer:"Operation Overlord"
     },
     {
         id:3,
         question:"What was the first Nazi concentration camp?",
-        a:"try again",
+        a:"Gross-Rosen",
         b:"Dachau",
-        c:"try again",
-        d:"try again",
-        answer:"b"
+        c:"Auschwitz",
+        d:"Hinzert",
+        answer:"Dachau"
     },
     {
         id:4,
         question:"What was the last major battle of World War II?",
-        a:"you'll get it next time",
-        b:"you'll get it next time",
+        a:"Battle of the Bulge",
+        b:"Battle of Stalingrad",
         c:"Battle of Okinawa",
-        d:"you'll get it next time",
-        answer:"c"
+        d:"Battle of the Atlantic",
+        answer:"Battle of Okinawa"
     },
     {
         id:5,
         question:"Where was the first atom bomb tested?",
         a:"New Mexico",
-        b:"you're wrong",
-        c:"you're wrong",
-        d:"you're wrong",
-        answer:"a"
+        b:"California",
+        c:"Arizona",
+        d:"Texas",
+        answer:"New Mexico"
     }
 
 ];
 
-
-
-// var questions = Math.floor(Math.random(questions.length) * 5) + 1;
-
-
-// console.log(questions);
-
-// let quiz = ["this is question 1", "this is question 2", "this is question 3", "this is question 4", "this is question 5"]
-
-// quiz.forEach((output) => {
-//     console.log(output);
-// });
-
-// function output(item, index, array) {
-//     console.log(index, item);
-// }
-
-//   OR =>     quiz.forEach(function(item, index, array) {
-//              console.log(index, item);
-//              });
 
 const startGame = () => {
     // when start game is clicked:
@@ -103,12 +83,73 @@ playBtn.addEventListener('click', ()=> {
     section3.classList.remove('d-none')
 });
 
-// let index = Math.floor(Math.random() * gameQuestions.length);
-// console.log(gameQuestions[index].question); // dont need these 2 lines
 
 // get element by id, inner text
 
+
+// ******************************* RANDOMIZE QUESTIONS *****************************************
+
 const theQuestion = document.getElementById('theQuestion');
+
+const displayQuestion =()=> {
+
+    let idx = Math.floor(Math.random() * gameQuestions.length)
+    const question = gameQuestions[idx].question
+    const answerA = gameQuestions[idx].a
+    const answerB = gameQuestions[idx].b
+    const answerC = gameQuestions[idx].c
+    const answerD = gameQuestions[idx].d
+
+    document.getElementById('answerAText').innerText = answerA
+    document.getElementById('answerBText').innerText = answerB
+    document.getElementById('answerCText').innerText = answerC
+    document.getElementById('answerDText').innerText = answerD
+
+
+    console.log(question)
+
+    theQuestion.innerText = question   
+
+}
+
+displayQuestion();
+
+
+// next button
+const nextBtn = document.getElementById('nextBtn')
+
+nextBtn.addEventListener('click', ()=> displayQuestion())
+
+const selectAnswer =()=> {
+    let selectedAnswer
+    const answerText = document.querySelectorAll('.answer-text')
+    // console.log(answerText)
+
+    answerText.forEach(answer => {
+        answer.addEventListener('click', ()=> {
+            selectedAnswer = answer.innerText
+            console.log(selectedAnswer)
+        })
+    })
+
+}
+
+selectAnswer()
+
+
+//*************************** MATCH CORRECT ANSWER WITH THE QUESTION *****************************
+
+// let matchingAnswer = gameQuestions.filter( (obj) => {
+//     if(obj.question == obj.answer){
+//         return true;
+//     } else 
+//     return false;
+    
+// })
+
+// console.log(matchingAnswer)
+
+// ***********************************************************************************************
 
 // theQuestion.innerText = gameQuestions[index].question
 
@@ -120,33 +161,35 @@ const theQuestion = document.getElementById('theQuestion');
 
 //console.log(gameQuestions);
 
+// ******************************** what i worked on w/Lorraine ***********************************
 
+// const questionIds = []
 
-const questionIds = []
-
-gameQuestions.forEach((question) => {
-    questionIds.push(question.id)
-})
-questionIds.sort(() => Math.random() - 0.5)
-console.log(questionIds);
-
-// gameQuestions.forEach((item) => {
-//     for (let i = 0; i < questionIds.length; i++){
-//         console.log(questionIds[i], item.id)
-//         // if (questionIds[i] == item.id) {
-//         //     console.log(item.question)
-//         // }
-
-//     }
+// gameQuestions.forEach((question) => {
+//     questionIds.push(question.id)
 // })
+// questionIds.sort(() => Math.random() - 0.5)
 
-for (let i = 0; i <questionIds.length; i++) {
-    gameQuestions.forEach((item) => {
-        if(item.id == questionIds[i]) {
-            console.log(item.question)
-        }
-    })
-}
+
+// console.log(questionIds);
+
+// ***********************************************************************************************
+
+
+
+
+// let answerBoxA = document.getElementById("answerBoxA");
+// let answerBoxB = document.getElementById("answerBoxB");
+// let answerBoxC = document.getElementById("answerBoxC");
+// let answerBoxD = document.getElementById("answerBoxD");
+
+// answerBoxA.addEventListener("click", aAnswer);
+
+// function aAnswer(){
+//     console.log(answerBoxA);
+
+// }
+
 
 // match question ids with their answer ids
 
