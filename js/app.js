@@ -48,15 +48,15 @@ const gameQuestions = [
 
 ];
 
-
-const startGame = () => {
     // when start game is clicked:
     // display question & 4 answers
     // allow user to select 1 of the 4 answers
     // if answer is correct, display message that the answer is correct
     // if answer is incorrect, display message that the player in incorrect
 
-    // if answer is correct, display message 
+
+
+const startGame = () => { 
     console.log('clicked') 
 };
 
@@ -68,11 +68,6 @@ const playBtn = document.getElementById('playBtn')
 playBtn.addEventListener('click', ()=> {
     startGame();
 });
-
-// const section1 = document.getElementById("section1");
-// const section2 = document.getElementById("section2");
-// const section3 = document.getElementById("section3");
-// const nextBtn = document.getElementById("nextBtn")
 
 
 // when play is clicked, displays section2 and section 3, remove section 1
@@ -89,16 +84,20 @@ playBtn.addEventListener('click', ()=> {
 
 // ******************************* RANDOMIZE QUESTIONS *****************************************
 
+let idx
+
+
 const theQuestion = document.getElementById('theQuestion');
 
 const displayQuestion =()=> {
 
-    let idx = Math.floor(Math.random() * gameQuestions.length)
+    idx = Math.floor(Math.random() * gameQuestions.length)
     const question = gameQuestions[idx].question
     const answerA = gameQuestions[idx].a
     const answerB = gameQuestions[idx].b
     const answerC = gameQuestions[idx].c
     const answerD = gameQuestions[idx].d
+    const correctAnswer = gameQuestions[idx].answer
 
     document.getElementById('answerAText').innerText = answerA
     document.getElementById('answerBText').innerText = answerB
@@ -137,6 +136,17 @@ const selectAnswer =()=> {
 selectAnswer()
 
 
+const testAnswers =(selected, correct)=> {
+    if (selected === correct) {
+        console.log('correct')
+    } else {
+        console.log('incorrect')
+    }
+}
+
+
+
+
 //*************************** MATCH CORRECT ANSWER WITH THE QUESTION *****************************
 
 // let matchingAnswer = gameQuestions.filter( (obj) => {
@@ -148,6 +158,9 @@ selectAnswer()
 // })
 
 // console.log(matchingAnswer)
+
+
+
 
 // ***********************************************************************************************
 
@@ -173,7 +186,20 @@ selectAnswer()
 
 // console.log(questionIds);
 
-// ***********************************************************************************************
+
+
+// ****** This is the one w/Lorraine that i used *****
+
+// for (let i = 0; i <questionIds.length; i++) {
+//     gameQuestions.forEach((item) => {
+//         if(item.id == questionIds[i]) {
+//             console.log(item.question)
+//         }
+//     })
+// }
+
+
+//***********************************************************************************************
 
 
 
