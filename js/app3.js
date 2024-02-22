@@ -165,6 +165,153 @@ class Game {
 }
 
 
+// ************************************************************** 
+        // if(this.answerBox == isCorrect) {
+        //     classList.add('correct')
+        // } else {
+        //     classList.add('incorrect')
+        // }
+        // return('correct')
+// ******************************************************
+        // if (selection == this.answerBox) {
+        //     this.correct.classList.add('d-none')
+        // } else {
+        //     this.correct.classList.remove('d-none')
+        // }
+
+
+        // div is called answerBox
+    
+    
+
+    // selection == this.answerbox
+
+
+
+// Next.... let the correct answer light up green
+// If incorrect answer is selected, let answer selection change to red and the correct answer change to green
+
+
+// Then... click next button and have the next question appear
+
+
+
+
+
+
+
+
+
+// for next  button you will need to remove the question and data associated w/question.. get rid of quest and add another one
+// className
+
+
+
+// when answer that is selected is correct, change the color of the div to green
+
+// when answer that is selected is incorrect, change color of the div to red
+
+// div is called answer-box (we named it this.answerBox in javascript)
+
+
+
+
+
+
+
+
+
+// ************************** ADDED BELOW ON THURSDAY ********************************************************************
+
+
+// const nextBtn = document.getElementById('nextBtn')
+
+// nextBtn.addEventListener('click', ()=> (this.quest
+
+// const selectAnswer =()=> {
+//     let selectedAnswer
+//     const answerText = document.querySelectorAll('.answer-text')
+//     // console.log(answerText)
+
+//     answerText.forEach(answer => {
+//         answer.addEventListener('click', ()=> {
+//             selectedAnswer = answer.innerText
+//             console.log(selectedAnswer)
+//         })
+//     })
+
+// }
+
+// selectAnswer()
+
+// function correct() {
+    
+// }
+
+
+
+// *************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+// ************************** Trying with radio buttons in html  ***************************************
+// function collectUserAnswers() {
+//     const answerText = [];
+
+//     // Assuming radio buttons are used for single-choice questions
+//     const radioButtons = document.querySelectorAll('input[type="radio"]:checked');
+    
+//     radioButtons.forEach((radioButton) => {
+//     answerText.push(radioButton.value);
+//     });
+
+//     return answerText;
+// }
+
+// function checkAnswers() {
+//     const userAnswers = collectUserAnswers();
+//     let score = 0;
+  
+//     userAnswers.forEach((userAnswer, index) => {
+//       if (userAnswer === quizData[index].correctAnswer) {
+//         score++;
+//       }
+//     });
+  
+//     alert(`You scored ${score} out of ${quizData.length}!`);
+//   }
+
+// *****************************************************************************************
+
+    // shuffle orders
+
+    // ***************** commented out below
+    // shuffle() {
+
+    // }
+
+    // method for getting right answer
+
+    // ************** commented out below
+    // correct() {
+    //     this.correctAnswer = this.gameQuestions.answer
+    // }
+
+    
+    //  ***************************************************
+
+//  SELECT AN ANSWER.....
+
+
+    // ****************************************************
+    
+
 const triviaGame = new Game() 
 
 // triviaGame.init()

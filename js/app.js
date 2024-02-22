@@ -135,6 +135,10 @@ const selectAnswer =()=> {
 
 selectAnswer()
 
+function correct() {
+    
+}
+
 
 const testAnswers =(selected, correct)=> {
     if (selected === correct) {

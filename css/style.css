@@ -48,3 +48,11 @@ body {
 .answer-text {
     padding: 5px 10px;
 }
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
